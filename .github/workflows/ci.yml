@@ -32,10 +32,10 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Checkout dbase
-        uses: actions/checkout@cmb/6
+        uses: actions/checkout@v2
       - name: Setup PHP
         id: setup-php
-        uses: cmb69/setup-php-sdk@v0.3
+        uses: cmb69/setup-php-sdk@cmb/6
         with:
           version: ${{matrix.version}}
           arch: ${{matrix.arch}}
