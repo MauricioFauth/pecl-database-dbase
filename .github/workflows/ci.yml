@@ -58,8 +58,8 @@ jobs:
           xcopy CREDITS ..\install\*
           xcopy LICENSE ..\install\*
           xcopy ${{steps.setup-php.outputs.builddir}}\php_dbase.dll ..\install\*
-        - name: Upload artifacts
-          uses: actions/upload-artifact@v2
-          with:
-              name: php_dbase
-              path: install
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+            name: php_dbase
+            path: install
