@@ -55,11 +55,9 @@ jobs:
         run: nmake test TESTS=tests
       - name: package
         run: |
-          xcopy CREDITS ..\install\*
-          xcopy LICENSE ..\install\*
-          echo ${{steps.setup-php.outputs.builddir}}
-          dir ${{steps.setup-php.outputs.builddir}}
-          xcopy ${{steps.setup-php.outputs.builddir}}\php_dbase.dll ..\install\*
+          xcopy CREDITS install\*
+          xcopy LICENSE install\*
+          xcopy ${{steps.setup-php.outputs.builddir}}\php_dbase.dll install\*
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
         with:
